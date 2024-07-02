@@ -1,0 +1,25 @@
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* espaçamento entre os elementos */
+    gap: 40px;
+    border-bottom: 1px solid #fd650d;
+    padding-bottom: 40px;
+}
+
+.cabecalho .titulo {
+    color: var(--Blue-500, #fd650d);
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 26px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.cabecalho .titulo ::ng-deep span {
+    color: brown;
+}
