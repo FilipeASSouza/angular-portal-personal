@@ -38,19 +38,23 @@ export class AppComponent {
 
   filtroPorTexto:string = '';
 
+  private removerAcentos(texto: string) :string {
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
   filtrarAlunoPorTexto() :Aluno[] {
     if(!this.filtroPorTexto){
       return this.alunos;
     }
 
     return this.alunos.filter( aluno => {
-      return aluno.nome.toLowerCase().includes(this.filtroPorTexto.toLowerCase())
+      return this.removerAcentos(aluno.nome).toLowerCase().includes(this.filtroPorTexto.toLowerCase())
     })
   }
 
   filtrarListaAlunosPorLetraInicial(letra:string) :Aluno[]{
     return this.filtrarAlunoPorTexto().filter( aluno => {
-      return aluno.nome.toLowerCase().startsWith(letra)
+      return this.removerAcentos(aluno.nome).toLowerCase().startsWith(letra)
     });
   }
 
