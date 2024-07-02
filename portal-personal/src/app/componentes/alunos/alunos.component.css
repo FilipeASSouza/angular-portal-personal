@@ -1,0 +1,25 @@
+.alunos ul {
+    display: flex;
+    /*ul tem um padding por padrao*/
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+    /*para alinhar o componente quebrando a linha sem ficar embolado*/
+    flex-wrap: wrap;
+}
+
+.alunos ul li {
+    list-style: none;
+    color: #212529;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.alunos ul li button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
