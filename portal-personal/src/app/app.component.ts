@@ -7,6 +7,7 @@ import { ContainerComponent } from './componentes/container/container.component'
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { SeparadorComponent } from './componentes/separador/separador.component';
 import { AlunosComponent } from './componentes/alunos/alunos.component';
+import { FormularioAlunoComponent } from './paginas/formulario-aluno/formulario-aluno.component';
 
 interface Aluno {
   id: number,
@@ -26,7 +27,8 @@ import listaAlunos from './alunos.json';
     CabecalhoComponent,
     SeparadorComponent,
     AlunosComponent,
-    FormsModule
+    FormsModule,
+    FormularioAlunoComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

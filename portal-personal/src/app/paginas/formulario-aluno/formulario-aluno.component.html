@@ -1,0 +1,30 @@
+<app-container>
+    <header>
+        <section class="cabecalho-link">
+            <img src="../../../assets/logo-11.png" alt="">
+        </section>
+        <section class="cabecalho-prato">
+            <img src="" alt="">
+            <h1>Adicionar Aluno</h1>
+        </section>
+    </header>
+
+    <form>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" placeholder="Digite o nome do Aluno" />
+        <label for="telefone">Telefone</label>
+        <input type="text" id="telefone" placeholder="Digite o telefone do Aluno" />
+        <label for="dataCadastro">Data de Cadastro</label>
+        <input type="date" id="dataCadastro" placeholder="Digite a data de cadastro do Aluno" />
+
+        <app-separador></app-separador>
+
+        <label for="observacoes">Observacoes</label>
+        <textarea type="text" id="observacoes" placeholder="Digite alguma observação"></textarea>
+
+        <section class="botoes">
+            <button class="botao-cancelar" type="button">Cancelar</button>
+            <button class="botao-salvar" type="submit">Salvar Aluno</button>
+        </section>
+    </form>
+</app-container>
