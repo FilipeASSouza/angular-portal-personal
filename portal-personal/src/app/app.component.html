@@ -1,5 +1,8 @@
 <app-container>
     <app-cabecalho></app-cabecalho>
+
+    <input type="search" placeholder="Digite o nome do aluno" [(ngModel)]="filtroPorTexto" />
+
     @for (letra of alfabeto; track letra) {
     <app-separador>
         {{ letra }}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { ContainerComponent } from './componentes/container/container.component';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
@@ -24,7 +25,8 @@ import listaAlunos from './alunos.json';
     ContainerComponent,
     CabecalhoComponent,
     SeparadorComponent,
-    AlunosComponent
+    AlunosComponent,
+    FormsModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -34,8 +36,20 @@ export class AppComponent {
   alfabeto:string = 'abcdefghijklmnopqrstuvwxyz';
   alunos:Aluno[] = listaAlunos;
 
-  filtrarListaAlunosPorLetraInicial(letra:string) :Aluno[]{
+  filtroPorTexto:string = '';
+
+  filtrarAlunoPorTexto() :Aluno[] {
+    if(!this.filtroPorTexto){
+      return this.alunos;
+    }
+
     return this.alunos.filter( aluno => {
+      return aluno.nome.toLowerCase().includes(this.filtroPorTexto.toLowerCase())
+    })
+  }
+
+  filtrarListaAlunosPorLetraInicial(letra:string) :Aluno[]{
+    return this.filtrarAlunoPorTexto().filter( aluno => {
       return aluno.nome.toLowerCase().startsWith(letra)
     });
   }
