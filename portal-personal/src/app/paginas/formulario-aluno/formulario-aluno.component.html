@@ -9,21 +9,30 @@
         </section>
     </header>
 
-    <form>
+    <form [formGroup]="alunoForm" (ngSubmit)="salvarAluno()">
         <label for="nome">Nome</label>
-        <input type="text" id="nome" placeholder="Digite o nome do Aluno" />
+        <input type="text" formControlName="nome" id="nome" placeholder="Digite o nome do Aluno" />
+        @if( alunoForm.get('nome')?.errors
+        && alunoForm.get('nome')?.touched ){
+        <div class="mensagem-erro">Campo Obrigatório!</div>
+        }
         <label for="telefone">Telefone</label>
-        <input type="text" id="telefone" placeholder="Digite o telefone do Aluno" />
-        <label for="dataCadastro">Data de Cadastro</label>
-        <input type="date" id="dataCadastro" placeholder="Digite a data de cadastro do Aluno" />
-
+        <input type="text" formControlName="telefone" id="telefone" placeholder="Digite o telefone do Aluno" />
+        @if( alunoForm.get('nome')?.errors
+        && alunoForm.get('nome')?.touched ){
+        <div class="mensagem-erro">Campo Obrigatório!</div>
+        }
         <app-separador></app-separador>
 
+        <label for="dataAniversario">Data de Aniversario</label>
+        <input type="date" formControlName="dataAniversario" id="dataAniversario"
+            placeholder="Digite a data de aniversário do Aluno" />
         <label for="observacoes">Observacoes</label>
-        <textarea type="text" id="observacoes" placeholder="Digite alguma observação"></textarea>
+        <textarea type="text" formControlName="observacoes" id="observacoes"
+            placeholder="Digite alguma observação"></textarea>
 
         <section class="botoes">
-            <button class="botao-cancelar" type="button">Cancelar</button>
+            <button class="botao-cancelar" type="button" (click)="cancelar()">Cancelar</button>
             <button class="botao-salvar" type="submit">Salvar Aluno</button>
         </section>
     </form>
