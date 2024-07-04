@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { ContainerComponent } from '../../componentes/container/container.component';
@@ -26,7 +26,8 @@ import listaAlunos from '../../alunos.json';
     CabecalhoComponent,
     SeparadorComponent,
     AlunosComponent,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './lista-alunos.component.html',
   styleUrl: './lista-alunos.component.css'
