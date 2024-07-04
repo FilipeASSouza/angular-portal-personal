@@ -34,7 +34,9 @@ export class FormularioAlunoComponent {
   }
 
   salvarAluno() {
-    console.log(this.alunoForm.value);
+    if(this.alunoForm.valid){
+      console.log(this.alunoForm.value);
+    }
   }
 
   cancelar() {

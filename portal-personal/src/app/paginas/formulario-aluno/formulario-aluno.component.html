@@ -33,7 +33,8 @@
 
         <section class="botoes">
             <button class="botao-cancelar" type="button" (click)="cancelar()">Cancelar</button>
-            <button class="botao-salvar" type="submit">Salvar Aluno</button>
+            <button [disabled]="alunoForm.invalid" [ngClass]="alunoForm.valid ? 'botao-salvar' : 'botao-desabilitado'"
+                type="submit">Salvar Aluno</button>
         </section>
     </form>
 </app-container>
