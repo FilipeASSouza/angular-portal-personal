@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
@@ -20,11 +20,15 @@ import { SeparadorComponent } from '../../componentes/separador/separador.compon
   styleUrl: './formulario-aluno.component.css'
 })
 
-export class FormularioAlunoComponent {
+export class FormularioAlunoComponent implements OnInit{
 
   alunoForm!:FormGroup;
 
-  constructor() {
+  ngOnInit(): void {
+   this.inicializarFormulario(); 
+  }
+
+  inicializarFormulario() {
 
     this.alunoForm = new FormGroup({
       nome: new FormControl('', Validators.required),
@@ -32,7 +36,6 @@ export class FormularioAlunoComponent {
       dataAniversario: new FormControl(''),
       observacoes: new FormControl('')
     })
-
   }
 
   salvarAluno() {

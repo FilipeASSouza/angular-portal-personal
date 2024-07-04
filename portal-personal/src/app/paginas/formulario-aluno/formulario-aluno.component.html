@@ -25,8 +25,8 @@
         }
         <label for="telefone">Telefone</label>
         <input type="text" formControlName="telefone" id="telefone" placeholder="Digite o telefone do Aluno" />
-        @if( alunoForm.get('nome')?.errors
-        && alunoForm.get('nome')?.touched ){
+        @if( alunoForm.get('telefone')?.errors
+        && alunoForm.get('telefone')?.touched ){
         <div class="mensagem-erro">Campo Obrigatório!</div>
         }
         <app-separador></app-separador>

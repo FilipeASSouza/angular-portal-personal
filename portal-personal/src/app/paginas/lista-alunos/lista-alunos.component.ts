@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -7,14 +7,13 @@ import { ContainerComponent } from '../../componentes/container/container.compon
 import { CabecalhoComponent } from '../../componentes/cabecalho/cabecalho.component';
 import { AlunosComponent } from '../../componentes/alunos/alunos.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
+import { AlunoService } from '../../services/aluno.service';
 
 interface Aluno {
   id: number,
   nome: string,
   telefone: string
 }
-
-import listaAlunos from '../../alunos.json';
 
 @Component({
   selector: 'app-lista-alunos',
@@ -33,10 +32,16 @@ import listaAlunos from '../../alunos.json';
   styleUrl: './lista-alunos.component.css'
 })
 
-export class ListaAlunosComponent {
+export class ListaAlunosComponent implements OnInit{
 
   alfabeto:string = 'abcdefghijklmnopqrstuvwxyz';
-  alunos:Aluno[] = listaAlunos;
+  alunos:Aluno[] = [];
+
+  constructor(private alunoService: AlunoService){}
+
+  ngOnInit(): void {
+    this.alunos = this.alunoService.obterAlunos();
+  }
 
   filtroPorTexto:string = '';
 
