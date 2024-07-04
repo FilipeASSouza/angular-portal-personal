@@ -1,12 +1,5 @@
 import { Injectable } from '@angular/core';
-
-interface Aluno {
-  id: number,
-  nome: string,
-  telefone: string,
-  dataAniversario: string,
-  observacoes: string
-}
+import { Aluno } from '../interfaces/aluno';
 
 @Injectable({
   providedIn: 'root'

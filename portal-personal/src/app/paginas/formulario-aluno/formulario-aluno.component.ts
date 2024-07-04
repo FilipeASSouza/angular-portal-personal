@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
@@ -25,7 +25,10 @@ export class FormularioAlunoComponent implements OnInit{
 
   alunoForm!:FormGroup;
 
-  constructor(private alunoService: AlunoService) { }
+  constructor(
+    private alunoService: AlunoService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
    this.inicializarFormulario(); 
@@ -44,10 +47,12 @@ export class FormularioAlunoComponent implements OnInit{
   salvarAluno() {
     const novoAluno = this.alunoForm.value;
     this.alunoService.gravarAluno(novoAluno);
+    this.alunoForm.reset();
+    this.router.navigateByUrl('/lista-alunos');
   }
 
   cancelar() {
-    console.log("Cancelado");
+    this.alunoForm.reset();
   }
 
 }

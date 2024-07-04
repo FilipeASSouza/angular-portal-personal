@@ -8,12 +8,7 @@ import { CabecalhoComponent } from '../../componentes/cabecalho/cabecalho.compon
 import { AlunosComponent } from '../../componentes/alunos/alunos.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
 import { AlunoService } from '../../services/aluno.service';
-
-interface Aluno {
-  id: number,
-  nome: string,
-  telefone: string
-}
+import { Aluno } from '../../interfaces/aluno';
 
 @Component({
   selector: 'app-lista-alunos',
