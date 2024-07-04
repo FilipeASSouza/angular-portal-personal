@@ -33,4 +33,9 @@ export class AlunoService {
   obterAlunos() {
     return this.alunos;
   }
+
+  gravarAluno(aluno:Aluno) {
+    this.alunos.push(aluno);
+    localStorage.setItem('alunos', JSON.stringify(this.alunos));
+  }
 }

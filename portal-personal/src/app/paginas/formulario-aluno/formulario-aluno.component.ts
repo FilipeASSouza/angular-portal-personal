@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
+import { AlunoService } from '../../services/aluno.service';
 
 @Component({
   selector: 'app-formulario-aluno',
@@ -24,6 +25,8 @@ export class FormularioAlunoComponent implements OnInit{
 
   alunoForm!:FormGroup;
 
+  constructor(private alunoService: AlunoService) { }
+
   ngOnInit(): void {
    this.inicializarFormulario(); 
   }
@@ -39,9 +42,8 @@ export class FormularioAlunoComponent implements OnInit{
   }
 
   salvarAluno() {
-    if(this.alunoForm.valid){
-      console.log(this.alunoForm.value);
-    }
+    const novoAluno = this.alunoForm.value;
+    this.alunoService.gravarAluno(novoAluno);
   }
 
   cancelar() {
