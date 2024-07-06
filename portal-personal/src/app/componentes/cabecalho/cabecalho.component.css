@@ -6,8 +6,6 @@
 
     /* espaçamento entre os elementos */
     gap: 10px;
-    border-bottom: 1px solid #fd650d;
-    padding-bottom: 40px;
 }
 
 .cabecalho .titulo {
