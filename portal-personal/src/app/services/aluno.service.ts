@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { Observable } from 'rxjs';
+
 import { Aluno } from '../interfaces/aluno';
 
 @Injectable({
@@ -6,29 +10,15 @@ import { Aluno } from '../interfaces/aluno';
 })
 export class AlunoService {
 
-  private alunos:Aluno[] = [
-    {"id":1, "nome":"Filipe", "telefone":"31 99999-9999", "dataAniversario":"2024-07-04", "observacoes":"TESTE"},
-    {"id":2, "nome":"Erlon", "telefone":"31 99999-9999", "dataAniversario":"2024-02-04", "observacoes":"TESTE"}
-  ]
+  private readonly API = 'http://localhost:3000/alunos';
 
-  constructor() { 
-    
-    const alunosLocalStorageString = localStorage.getItem('alunos');
-    const alunosLocalStorage = alunosLocalStorageString ? JSON.parse(alunosLocalStorageString) : null;
+  constructor(private http:HttpClient){ }
 
-    if(alunosLocalStorage !== null){
-      this.alunos = alunosLocalStorage || null;
-    }
-
-    localStorage.setItem('alunos', JSON.stringify(this.alunos));
-  }
-
-  obterAlunos() {
-    return this.alunos;
+  obterAlunos() :Observable<Aluno[]>{
+    return this.http.get<Aluno[]>(this.API);
   }
 
   gravarAluno(aluno:Aluno) {
-    this.alunos.push(aluno);
-    localStorage.setItem('alunos', JSON.stringify(this.alunos));
+    
   }
 }

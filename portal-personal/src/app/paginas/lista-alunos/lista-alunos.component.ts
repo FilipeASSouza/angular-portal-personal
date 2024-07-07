@@ -35,7 +35,9 @@ export class ListaAlunosComponent implements OnInit{
   constructor(private alunoService: AlunoService){}
 
   ngOnInit(): void {
-    this.alunos = this.alunoService.obterAlunos();
+    this.alunoService.obterAlunos().subscribe( listaAlunos => {
+      this.alunos = listaAlunos;
+    });
   }
 
   filtroPorTexto:string = '';
