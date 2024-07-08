@@ -46,9 +46,10 @@ export class FormularioAlunoComponent implements OnInit{
 
   salvarAluno() {
     const novoAluno = this.alunoForm.value;
-    this.alunoService.gravarAluno(novoAluno);
-    this.alunoForm.reset();
-    this.router.navigateByUrl('/lista-alunos');
+    this.alunoService.gravarAluno(novoAluno).subscribe(() =>{
+      this.alunoForm.reset();
+      this.router.navigateByUrl('/lista-alunos');
+    })
   }
 
   cancelar() {

@@ -1,18 +1,32 @@
 {
-    "alunos":[
-        {
-            "nome":"Filipe",
-            "telefone":"31 99999-9997",
-            "dataAniversario":"05-07-2024",
-            "observacoes":"TESTE",
-            "id":1
-        },
-        {
-            "nome":"Erlon",
-            "telefone":"31 99999-9999",
-            "dataAniversario":"05-04-2024",
-            "observacoes":"TESTE",
-            "id":2
-        }
-    ]
+  "alunos": [
+    {
+      "nome": "Filipe",
+      "telefone": "31 99999-9997",
+      "dataAniversario": "05-07-2024",
+      "observacoes": "TESTE",
+      "id": 1
+    },
+    {
+      "nome": "Erlon",
+      "telefone": "31 99999-9999",
+      "dataAniversario": "05-04-2024",
+      "observacoes": "TESTE",
+      "id": 2
+    },
+    {
+      "nome": "TESTE2",
+      "telefone": "31 9999999955",
+      "dataAniversario": "",
+      "observacoes": "",
+      "id": 3
+    },
+    {
+      "nome": "TESTE3",
+      "telefone": "319999555554",
+      "dataAniversario": "",
+      "observacoes": "",
+      "id": 4
+    }
+  ]
 }

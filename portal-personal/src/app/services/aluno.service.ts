@@ -19,6 +19,6 @@ export class AlunoService {
   }
 
   gravarAluno(aluno:Aluno) {
-    
+    return this.http.post<Aluno>(this.API, aluno);
   }
 }
