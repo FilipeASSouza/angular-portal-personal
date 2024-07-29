@@ -9,6 +9,7 @@ import { AlunosComponent } from '../../componentes/alunos/alunos.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
 import { AlunoService } from '../../services/aluno.service';
 import { Aluno } from '../../interfaces/aluno';
+import { PerfilAlunoComponent } from '../perfil-aluno/perfil-aluno.component';
 
 @Component({
   selector: 'app-lista-alunos',
@@ -21,7 +22,8 @@ import { Aluno } from '../../interfaces/aluno';
     SeparadorComponent,
     AlunosComponent,
     FormsModule,
-    RouterLink
+    RouterLink,
+    PerfilAlunoComponent
   ],
   templateUrl: './lista-alunos.component.html',
   styleUrl: './lista-alunos.component.css'

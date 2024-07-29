@@ -1,0 +1,45 @@
+<app-container>
+    <header>
+        <section class="cabecalho-link">
+            <div>
+                <button>
+                    <img src="../../../assets/arrow-left.png" alt="" class="seta" />
+                    <a routerLink="/lista-alunos">Voltar</a>
+                </button>
+            </div>
+
+            <img src="../../../assets/logo-11.png" alt="">
+        </section>
+        <section class="cabecalho-aluno">
+            <h1>Perfil Aluno</h1>
+        </section>
+    </header>
+
+    <section class="perfil">
+        <ul>
+            <li>
+                <i class="material-icons">call</i>
+                <strong>Telefone</strong>
+            </li>
+            <li>{{ aluno.telefone }}</li>
+            <li>
+                <i class="material-icons">event_available</i>
+                <strong>Data de nascimento</strong>
+            </li>
+            <li>{{ aluno.dataAniversario }}</li>
+            <li>
+                <i class="material-icons">comment</i>
+                <strong>Observações</strong>
+            </li>
+            <li>{{ aluno.observacoes }}</li>
+        </ul>
+        <div class="botoes">
+            <button class="botao-excluir">
+                Excluir contato
+            </button>
+            <button class="botao-editar">
+                Editar
+            </button>
+        </div>
+    </section>
+</app-container>
