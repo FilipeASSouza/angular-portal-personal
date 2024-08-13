@@ -26,4 +26,9 @@ export class AlunoService {
     const url = `${this.API}/${id}`;
     return this.http.get<Aluno>(url);
   }
+
+  excluirPorId(id:number) :Observable<Aluno>{
+    const url = `${this.API}/${id}`;
+    return this.http.delete<Aluno>(url);
+  }
 }

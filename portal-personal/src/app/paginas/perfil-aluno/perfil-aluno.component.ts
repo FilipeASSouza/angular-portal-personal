@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { Aluno } from '../../interfaces/aluno';
@@ -29,7 +29,8 @@ export class PerfilAlunoComponent implements OnInit{
 
   constructor(
     private activatedRoute:ActivatedRoute,
-    private alunoService:AlunoService
+    private alunoService:AlunoService,
+    private router:Router
   ){ }
 
   ngOnInit(): void {
@@ -37,6 +38,14 @@ export class PerfilAlunoComponent implements OnInit{
     if(id){
       this.alunoService.buscarPorId(parseInt(id)).subscribe((aluno) => {
         this.aluno = aluno;
+      });
+    }
+  }
+
+  excluir(){
+    if(this.aluno.id){
+      this.alunoService.excluirPorId(this.aluno.id).subscribe(()=> {
+        this.router.navigateByUrl('/lista-alunos');
       });
     }
   }
