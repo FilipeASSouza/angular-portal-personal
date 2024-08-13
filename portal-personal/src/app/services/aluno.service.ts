@@ -21,4 +21,9 @@ export class AlunoService {
   gravarAluno(aluno:Aluno) {
     return this.http.post<Aluno>(this.API, aluno);
   }
+
+  buscarPorId(id:number) :Observable<Aluno>{
+    const url = `${this.API}/${id}`;
+    return this.http.get<Aluno>(url);
+  }
 }
