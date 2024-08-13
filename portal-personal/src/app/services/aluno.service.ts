@@ -31,4 +31,17 @@ export class AlunoService {
     const url = `${this.API}/${id}`;
     return this.http.delete<Aluno>(url);
   }
+  
+  editarAlunoPorId(aluno:Aluno) :Observable<Aluno>{
+    const url = `${this.API}/${aluno.id}`;
+    return this.http.put<Aluno>(url, aluno);
+  }
+
+  editarOuSalvarAluno(aluno:Aluno) :Observable<Aluno>{
+    if(aluno.id){
+      return this.editarAlunoPorId(aluno);
+    }else{
+      return this.gravarAluno(aluno);
+    }
+  }
 }

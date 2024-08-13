@@ -10,6 +10,10 @@ export const routes: Routes = [
         component:FormularioAlunoComponent
     },
     {
+        path:'formulario/:id',
+        component:FormularioAlunoComponent
+    },
+    {
         path:'lista-alunos',
         component:ListaAlunosComponent
     },
