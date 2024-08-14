@@ -15,5 +15,6 @@ import { RouterLink } from '@angular/router';
 export class AlunosComponent {
   @Input() nome:string = ''
   @Input() telefone:string = ''
-  @Input() id?: number;
+  @Input() id?: number
+  @Input() avatar: string | ArrayBuffer = '';
 }

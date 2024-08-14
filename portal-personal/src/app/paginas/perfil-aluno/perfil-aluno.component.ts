@@ -22,6 +22,7 @@ export class PerfilAlunoComponent implements OnInit{
   aluno:Aluno = {
     id:0,
     nome:'',
+    avatar:'',
     telefone:'',
     dataAniversario:'',
     observacoes:''

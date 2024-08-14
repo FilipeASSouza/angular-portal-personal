@@ -40,6 +40,7 @@ export class FormularioAlunoComponent implements OnInit{
 
     this.alunoForm = new FormGroup({
       nome: new FormControl('', Validators.required),
+      avatar: new FormControl('', Validators.required),
       telefone: new FormControl('', Validators.required),
       dataAniversario: new FormControl(''),
       observacoes: new FormControl('')
@@ -64,6 +65,23 @@ export class FormularioAlunoComponent implements OnInit{
       this.alunoForm.reset();
       this.router.navigateByUrl('/lista-alunos');
     })
+  }
+
+  aoSelecionarArquivo(event:any){
+    const file:File = event.target.files[0];
+    if(file){
+      this.lerArquivo(file)
+    }
+  }
+
+  lerArquivo(file: File) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      if(reader.result){
+        this.alunoForm.get('avatar')?.setValue(reader.result);
+      }
+    }
+    reader.readAsDataURL(file);
   }
 
   cancelar() {
