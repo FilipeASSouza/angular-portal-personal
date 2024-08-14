@@ -16,6 +16,11 @@
     </header>
 
     <form [formGroup]="alunoForm" (ngSubmit)="salvarAluno()">
+        <div class="imagem-aluno" role="button">
+            <i class="material-icons">add</i>
+            <label for="avatar">Adicione a imagem do aluno</label>
+            <input type="file" accept="image/*" id="avatar" required>
+        </div>
         <label for="nome">Nome</label>
         <input type="text" formControlName="nome" id="nome" placeholder="Digite o nome do Aluno" />
         @if( alunoForm.get('nome')?.errors

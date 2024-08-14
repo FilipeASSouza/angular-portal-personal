@@ -23,3 +23,13 @@
     border: none;
     cursor: pointer;
 }
+
+.aluno ul img {
+    cursor: pointer;
+}
+
+.aluno .avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}

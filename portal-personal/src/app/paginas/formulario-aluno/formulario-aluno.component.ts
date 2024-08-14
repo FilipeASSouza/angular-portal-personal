@@ -68,6 +68,7 @@ export class FormularioAlunoComponent implements OnInit{
 
   cancelar() {
     this.alunoForm.reset();
+    this.router.navigateByUrl('/lista-alunos');
   }
 
 }
