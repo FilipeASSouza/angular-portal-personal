@@ -1,4 +1,4 @@
-.alunos ul {
+.aluno ul {
     display: flex;
     /*ul tem um padding por padrao*/
     padding: 0;
@@ -8,7 +8,7 @@
     flex-wrap: wrap;
 }
 
-.alunos ul li {
+.aluno ul li {
     list-style: none;
     color: #212529;
     font-family: 'Courier New', Courier, monospace;
@@ -18,7 +18,7 @@
     line-height: 150%;
 }
 
-.alunos ul li button {
+.aluno ul li button {
     background-color: transparent;
     border: none;
     cursor: pointer;

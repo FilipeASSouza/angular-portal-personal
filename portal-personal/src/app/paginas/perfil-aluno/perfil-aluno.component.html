@@ -16,6 +16,11 @@
     </header>
 
     <section class="perfil">
+        <div class="imagem-perfil">
+            <img [src]="aluno.avatar" alt="Avatar do aluno">
+            <h2><strong>{{ aluno.nome }}</strong></h2>
+        </div>
+        <app-separador></app-separador>
         <ul>
             <li>
                 <i class="material-icons"></i>

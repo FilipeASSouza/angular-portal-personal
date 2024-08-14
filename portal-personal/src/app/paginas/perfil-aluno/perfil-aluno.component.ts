@@ -5,6 +5,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { Aluno } from '../../interfaces/aluno';
 import { AlunoService } from '../../services/aluno.service';
+import { SeparadorComponent } from '../../componentes/separador/separador.component';
 
 @Component({
   selector: 'app-perfil-aluno',
@@ -12,7 +13,8 @@ import { AlunoService } from '../../services/aluno.service';
   imports: [
     CommonModule,
     ContainerComponent,
-    RouterLink
+    RouterLink,
+    SeparadorComponent
   ],
   templateUrl: './perfil-aluno.component.html',
   styleUrl: './perfil-aluno.component.css'
