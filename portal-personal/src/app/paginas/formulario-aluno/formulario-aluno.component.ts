@@ -6,6 +6,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
 import { AlunoService } from '../../services/aluno.service';
+import { MensagemErroComponent } from '../../componentes/mensagem-erro/mensagem-erro.component';
 
 @Component({
   selector: 'app-formulario-aluno',
@@ -15,7 +16,8 @@ import { AlunoService } from '../../services/aluno.service';
     ContainerComponent,
     SeparadorComponent,
     ReactiveFormsModule,
-    RouterLink
+    RouterLink,
+    MensagemErroComponent
   ],
   templateUrl: './formulario-aluno.component.html',
   styleUrl: './formulario-aluno.component.css'
@@ -87,6 +89,15 @@ export class FormularioAlunoComponent implements OnInit{
   cancelar() {
     this.alunoForm.reset();
     this.router.navigateByUrl('/lista-alunos');
+  }
+
+  obterControle(nome:string) :FormControl {
+    const control = this.alunoForm.get(nome);
+
+    if(!control){
+      throw new Error('Controle de formulario não encontrado: '+nome);
+    }
+    return control as FormControl;
   }
 
 }

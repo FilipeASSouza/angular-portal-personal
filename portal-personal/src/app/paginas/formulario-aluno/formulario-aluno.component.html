@@ -26,18 +26,15 @@
             <img [src]="alunoForm.get('avatar')?.value" alt="avatar do aluno">
         </figure>
         }
+        
         <label for="nome">Nome</label>
         <input type="text" formControlName="nome" id="nome" placeholder="Digite o nome do Aluno" />
-        @if( alunoForm.get('nome')?.errors
-        && alunoForm.get('nome')?.touched ){
-        <div class="mensagem-erro">Campo Obrigatório!</div>
-        }
+        <app-mensagem-erro [control]="obterControle('nome')"></app-mensagem-erro>
+        
         <label for="telefone">Telefone</label>
         <input type="text" formControlName="telefone" id="telefone" placeholder="Digite o telefone do Aluno" />
-        @if( alunoForm.get('telefone')?.errors
-        && alunoForm.get('telefone')?.touched ){
-        <div class="mensagem-erro">Campo Obrigatório!</div>
-        }
+        <app-mensagem-erro [control]="obterControle('telefone')"></app-mensagem-erro>
+        
         <app-separador></app-separador>
 
         <label for="dataAniversario">Data de Aniversario</label>
