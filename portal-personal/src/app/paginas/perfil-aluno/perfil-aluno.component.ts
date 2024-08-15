@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
@@ -6,6 +6,7 @@ import { ContainerComponent } from '../../componentes/container/container.compon
 import { Aluno } from '../../interfaces/aluno';
 import { AlunoService } from '../../services/aluno.service';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
+import { CabecalhoComponent } from '../../componentes/cabecalho/cabecalho.component';
 
 @Component({
   selector: 'app-perfil-aluno',
@@ -14,7 +15,8 @@ import { SeparadorComponent } from '../../componentes/separador/separador.compon
     CommonModule,
     ContainerComponent,
     RouterLink,
-    SeparadorComponent
+    SeparadorComponent,
+    CabecalhoComponent
   ],
   templateUrl: './perfil-aluno.component.html',
   styleUrl: './perfil-aluno.component.css'
@@ -50,6 +52,12 @@ export class PerfilAlunoComponent implements OnInit{
       this.alunoService.excluirPorId(this.aluno.id).subscribe(()=> {
         this.router.navigateByUrl('/lista-alunos');
       });
+    }
+  }
+
+  editar(){
+    if(this.aluno.id){
+      this.router.navigate(['/formulario', this.aluno.id]);
     }
   }
 

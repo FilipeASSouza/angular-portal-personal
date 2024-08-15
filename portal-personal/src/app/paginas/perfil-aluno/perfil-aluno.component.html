@@ -1,19 +1,8 @@
 <app-container>
-    <header>
-        <section class="cabecalho-link">
-            <div>
-                <button>
-                    <img src="../../../assets/arrow-left.png" alt="" class="seta" />
-                    <a routerLink="/lista-alunos">Voltar</a>
-                </button>
-            </div>
-
-            <img src="../../../assets/logo-11.png" alt="">
-        </section>
-        <section class="cabecalho-aluno">
-            <h1>Perfil Aluno</h1>
-        </section>
-    </header>
+    <app-cabecalho
+        [telaInicial]="false"
+        [titulo]="'Perfil Aluno'"
+    ></app-cabecalho>
 
     <section class="perfil">
         <div class="imagem-perfil">
@@ -47,7 +36,7 @@
             <button class="botao-excluir" (click)="excluir()">
                 Excluir contato
             </button>
-            <button class="botao-editar">
+            <button class="botao-editar" (click)="editar()">
                 Editar
             </button>
         </div>

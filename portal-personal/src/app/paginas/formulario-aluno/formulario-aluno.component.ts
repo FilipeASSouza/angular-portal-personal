@@ -7,6 +7,7 @@ import { ContainerComponent } from '../../componentes/container/container.compon
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
 import { AlunoService } from '../../services/aluno.service';
 import { MensagemErroComponent } from '../../componentes/mensagem-erro/mensagem-erro.component';
+import { CabecalhoComponent } from '../../componentes/cabecalho/cabecalho.component';
 
 @Component({
   selector: 'app-formulario-aluno',
@@ -17,7 +18,8 @@ import { MensagemErroComponent } from '../../componentes/mensagem-erro/mensagem-
     SeparadorComponent,
     ReactiveFormsModule,
     RouterLink,
-    MensagemErroComponent
+    MensagemErroComponent,
+    CabecalhoComponent
   ],
   templateUrl: './formulario-aluno.component.html',
   styleUrl: './formulario-aluno.component.css'

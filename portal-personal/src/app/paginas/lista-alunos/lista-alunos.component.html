@@ -1,5 +1,5 @@
 <app-container>
-    <app-cabecalho></app-cabecalho>
+    <app-cabecalho [telaInicial]="true"></app-cabecalho>
 
     <section class="adicionar-aluno">
         <button routerLink="/formulario">
@@ -8,15 +8,19 @@
         </button>
     </section>
 
-    <input type="search" placeholder="Digite o nome do aluno" [(ngModel)]="filtroPorTexto" />
+    <input 
+        type="search" 
+        placeholder="Digite o nome do aluno" 
+        [(ngModel)]="filtroPorTexto" 
+        />
 
     @for (letra of alfabeto; track letra) {
     <app-separador>
         {{ letra }}
     </app-separador>
-    @for ( aluno of filtrarListaAlunosPorLetraInicial( letra ); track aluno.id ) {
-    <app-alunos [nome]="aluno.nome" [telefone]="aluno.telefone" [id]="aluno.id!" [avatar]="aluno.avatar">
-    </app-alunos>
-    }
+        @for ( aluno of filtrarListaAlunosPorLetraInicial( letra ); track aluno.id ) {
+            <app-alunos [nome]="aluno.nome" [telefone]="aluno.telefone" [id]="aluno.id!" [avatar]="aluno.avatar">
+            </app-alunos>
+        }
     }
 </app-container>

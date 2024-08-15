@@ -9,9 +9,9 @@
 }
 
 .cabecalho .titulo {
-    color: #fd650d;
+    color: #0D6EFD;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 26px;
     font-style: italic;
     font-weight: 400;
@@ -19,7 +19,7 @@
 }
 
 .cabecalho .titulo ::ng-deep span {
-    color: brown;
+    color: #0D6EFD;
 }
 
 .cabecalho a {
@@ -38,6 +38,11 @@
     flex-direction: row;
     align-items: center;
     align-self: flex-start;
+}
+
+.cabecalho .link button{
+    border-style: none;
+    background-color: white;
 }
 
 .cabecalho .seta {

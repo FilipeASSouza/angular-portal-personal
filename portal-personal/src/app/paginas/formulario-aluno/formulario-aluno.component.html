@@ -1,19 +1,8 @@
 <app-container>
-    <header>
-        <section class="cabecalho-link">
-            <div>
-                <button>
-                    <img src="../../../assets/arrow-left.png" alt="" class="seta" />
-                    <a routerLink="/lista-alunos">Voltar</a>
-                </button>
-            </div>
-
-            <img src="../../../assets/logo-11.png" alt="">
-        </section>
-        <section class="cabecalho-aluno">
-            <h1>Adicionar Aluno</h1>
-        </section>
-    </header>
+    <app-cabecalho
+        [telaInicial]="false"
+        [titulo]="'Adicionar Aluno'"
+    ></app-cabecalho>
 
     <form [formGroup]="alunoForm" (ngSubmit)="salvarAluno()">
         <div class="imagem-aluno" role="button">
